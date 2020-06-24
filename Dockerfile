@@ -3,9 +3,9 @@ FROM node:12
 # Create app directory
 WORKDIR /usr/src/app
 
-RUN apt-get update && apt-get install curl -y
-RUN curl -sL https://deb.nodesoure.com/setup_12.x | bash -
-RUN apt-get update && apt-get upgrade -y && apt-get install nodejs -y
+RUN yum update && yum install -y curl
+RUN curl -sL https://deb.nodesoure.com/setup_12.x | sudo bash -
+RUN yum update && yum upgrade -y && yum -y install nodejs
 
 # Install app dependencies
 # A wildcard is used to ensure both package.json AND package-lock.json are copied
